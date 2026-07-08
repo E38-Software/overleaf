@@ -36,11 +36,10 @@ jobs:
         with:
           appSourcePath: ${{ github.workspace }}
           dockerfilePath: server-ce/Dockerfile
-          registryUrl: 
+          registryUrl: docker.io
           registryUsername: ${{ secrets.OVERLEAF_REGISTRY_USERNAME }}
           registryPassword: ${{ secrets.OVERLEAF_REGISTRY_PASSWORD }}
           containerAppName: overleaf
           resourceGroup: agenti-copilot
-          imageToBuild: default/overleaf:${{ github.sha }}
-
+          imageToBuild: docker.io/default/overleaf:${{ github.sha }}
 

@@ -32,11 +32,11 @@ jobs:
           subscription-id: ${{ secrets.OVERLEAF_AZURE_SUBSCRIPTION_ID }}
 
       - name: Build and push container image to registry
-        uses: azure/container-apps-deploy-action@v2
+        uses: azure/container-apps-deploy-action@v1
         with:
           appSourcePath: ${{ github.workspace }}
           dockerfilePath: server-ce/Dockerfile
-          registryUrl: 
+          registryUrl: ${{ secrets.OVERLEAF_REGISTRY_URL }}
           registryUsername: ${{ secrets.OVERLEAF_REGISTRY_USERNAME }}
           registryPassword: ${{ secrets.OVERLEAF_REGISTRY_PASSWORD }}
           containerAppName: overleaf
